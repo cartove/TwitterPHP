@@ -40,8 +40,18 @@ class TwitterHashtags
       }
       foreach($statuses as $tweet)
       {
+
         if($tweet->retweeted_status != NULL)
           $tweet = $tweet->retweeted_status;
+        
+        $maybeVideo = $tweet->entities->urls[0]->expanded_url;
+        if ($tweet->entities->media == NULL && strpos($maybeVideo,'youtu.be') !== false) {
+          $media_thumb = "http://img.youtube.com/vi/". str_replace("http://youtu.be/","",$maybeVideo) ."/1.jpg";
+        }
+        else{
+        $media_thumb = $tweet->entities->media[0]->media_url;
+        }
+        
         $text = trim(preg_replace("/\s+/", " ", $tweet->text));
         $text = preg_replace('/((www|http:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $text);
         $text = preg_replace('/#(\\w+)/','<a href="https://twitter.com/hashtag/\1">#\1</a>',$text);
@@ -52,8 +62,9 @@ class TwitterHashtags
                                         "UserPicture" => $tweet->user->profile_image_url,
                                         "AuthorTwitterName" =>  $tweet->user->screen_name,
                                         "URL" => "http://twitter.com/{$tweet->user->screen_name}/status/{$tweet->id_str}",
-                                        "Media" => $tweet->entities->media[0]->media_url,
+                                        "Media" => $media_thumb,
                                         "Date" => "$tweet->created_at"));
+
       }
     }  
             return $output_array;

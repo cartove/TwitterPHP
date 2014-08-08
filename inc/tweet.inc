@@ -5,7 +5,7 @@ require_once('TwitterHashtags.inc');
 /** Perform a GET request  **/
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
 $users = array("cartove");
-$user_limit = 3;
+$user_limit = 1;
 $keywords = array();
 $keywords_limit = 0;
 $hashtags = array();
