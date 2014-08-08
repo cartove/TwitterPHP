@@ -1,0 +1,243 @@
+html
+{
+  font-family:sans-serif;
+}
+
+body
+{
+  color:#292f33;
+  font-size:14px;
+  line-height:18px;
+  overflow-y:scroll;
+  font-family:sans-serif, Arial;
+  background:#fff;
+  margin:0;
+}
+
+a
+{
+  color:#2b7bb9;
+  text-decoration:none;
+  background:transparent;
+}
+
+ol
+{
+  list-style:decimal;
+  margin:0 0 0 20px;
+  padding:0;
+}
+
+h2
+{
+  color:#66757f;
+  font-size:22px;
+  font-weight:300;
+  line-height:22px;
+}
+
+.content-header
+{
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  background-clip:padding-box;
+  border-color:#e1e8ed;
+  border-style:solid;
+  border-width:1px 1px 0;
+}
+
+.content-header .header-inner
+{
+  min-height:20px;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-bottom-color:#e1e8ed;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  padding-left:1em;
+  padding-top:.2em;
+  background-color:#fff;
+}
+
+.avatar
+{
+  width:48px;
+  height:48px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+}
+
+.account-group:hover .username,.account-group:focus .username
+{
+  text-decoration:none;
+  color:#8899a6;
+}
+
+.fullname
+{
+  font-weight:700;
+  color:#292f33;
+}
+
+.username,.time,.time a
+{
+  font-size:13px;
+  color:#8899a6;
+}
+
+.username s
+{
+  color:#b1bbc3;
+}
+.stream-container
+{
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 50%;
+}
+.stream,.stream-items
+{
+  position:relative;
+  margin-left:0;
+  list-style:none;
+}
+
+.stream-item
+{
+  border-left-width:1px;
+  border-left-style:solid;
+  border-left-color:#e1e8ed;
+  border-right-width:1px;
+  border-right-style:solid;
+  border-right-color:#e1e8ed;
+  background:padding-box #fff;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+}
+
+.stream-item-header .avatar
+{
+  float:left;
+  margin-top:3px;
+  margin-left:-58px;
+}
+
+.tweet
+{
+  position:relative;
+  min-height:51px;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-bottom-color:#e1e8ed;
+  cursor:pointer;
+  padding:9px 12px;
+}
+
+.tweet .time::before
+{
+  content:'·';
+}
+
+a:hover,a:focus,a:active,.account-group:hover .fullname,.account-group:focus .fullname
+{
+  text-decoration:underline;
+}
+
+li
+{
+  text-align:inherit;
+}
+
+s,.account-group:hover,.account-group:focus
+{
+  text-decoration:none;
+}
+
+.stream-item > div::before,.stream-item > div::after,.stream-item::before,.stream-item::after
+{
+  content:' ';
+  display:table;
+}
+
+.stream-item > div::after,.stream-item::after
+{
+  clear:both;
+}
+
+.stream-item-header .account-group,.tweet .time
+{
+  color:#8899a6;
+}
+
+li.stream-item
+{
+  line-height:inherit;
+}
+
+.tweet:hover
+{
+  background-color:#f5f8fa;
+}
+
+b
+{
+  font-weight:400;
+}
+
+.stream-item .content
+{
+  margin-left:58px;
+}
+
+.tweet p
+{
+  word-wrap:break-word;
+}
+
+.username
+{
+  direction:ltr;
+  unicode-bidi:embed;
+}
+
+.cartove
+{
+  background-color:#091a2a;
+}
+
+a,a:hover,a:focus,a:active,a,.account-group:hover .fullname,.account-group:focus .fullname,.stream-item a:hover .fullname,.stream-item a:focus .fullname,.tweet .time a:hover,.tweet .time a:focus
+{
+  color:#428bca;
+}
+
+.cards-media-container{
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  max-width: 300px;
+}
+.twitter-footer{
+  height: 50px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  *position: relative;
+
+}
+.twitter-icon-inner{
+    float: left;
+    position: relative;
+    left: 50%;
+}
+.twitter-icon{
+    padding-top: 20%;
+    display: block;
+    position: relative;
+    left: -50%;
+}
