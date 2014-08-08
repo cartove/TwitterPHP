@@ -219,7 +219,7 @@ a,a:hover,a:focus,a:active,a,.account-group:hover .fullname,.account-group:focus
   margin-left: auto;
   margin-right: auto;
   height: auto;
-  max-width: 300px;
+  max-width: 100%;
 }
 .twitter-footer{
   height: 50px;

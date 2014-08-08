@@ -46,15 +46,16 @@ class TwitterHashtags
         
         $maybeVideo = $tweet->entities->urls[0]->expanded_url;
         if ($tweet->entities->media == NULL && strpos($maybeVideo,'youtu.be') !== false) {
-          $media_thumb = "http://img.youtube.com/vi/". str_replace("http://youtu.be/","",$maybeVideo) ."/1.jpg";
+          $media_thumb = "http://img.youtube.com/vi/". str_replace("http://youtu.be/","",$maybeVideo) ."/maxresdefault.jpg";
         }
         else{
         $media_thumb = $tweet->entities->media[0]->media_url;
         }
         
         $text = trim(preg_replace("/\s+/", " ", $tweet->text));
-        $text = preg_replace('/((www|http:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $text);
-        $text = preg_replace('/#(\\w+)/','<a href="https://twitter.com/hashtag/\1">#\1</a>',$text);
+        $text = preg_replace('/((http:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $text);
+        $text = preg_replace('/((https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $text);
+        $text = preg_replace('/#(\\w+)/','<a href="http://twitter.com/hashtag/\1">#\1</a>',$text);
         $text = preg_replace('/@(\\w+)/','<a href="http://twitter.com/\1">@\1</a>',$text);
         array_push($output_array, array("ID" => $tweetsCounter++,
                                         "Text" => $text,
