@@ -31,6 +31,8 @@ class TwitterFactory
 
 
 
+
+
   public function fetch_data(){
     // Twitter API 1.1 doesn't allow multi query in the way we wish for, it doesn't grantee that the result would be from both users/hashtags/keywords thus we need to query each key alone. which is annoying because of the datalimit.
 
@@ -48,14 +50,15 @@ class TwitterFactory
       array_push($this->Data,$this->twitter_api->twitter_processor($this->keywords,'?q=',$this->keywords_limit));
     }
     $this->Data = array_merge((array)$this->Data[0],(array)$this->Data[1],(array)$this->Data[2]);
-    usort($Data, 'date_compare');
+    usort($this->Data, 'date_compare');
     return $this->Data;
   }
 
 }
 
-  function date_compare($a, $b)
+ function date_compare($a, $b)
   {
+    date_default_timezone_set('GMT');
     $t1 = strtotime($a['Date']);
     $t2 = strtotime($b['Date']);
     return $t1 < $t2;

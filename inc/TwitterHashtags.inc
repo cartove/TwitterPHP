@@ -36,11 +36,13 @@ class TwitterHashtags
       foreach($statuses as $tweet)
       {
 
-        if($tweet->retweeted_status != NULL)
+        if(  !is_null($tweet->retweeted_status) )
           $tweet = $tweet->retweeted_status;
         
-        $maybeVideo = $tweet->entities->urls[0]->expanded_url;
-        if ($tweet->entities->media == NULL && strpos($maybeVideo,'youtu.be') !== false) {
+        if(!is_null($tweet->entities->urls[0]->expanded_url))
+          $maybeVideo = $tweet->entities->urls[0]->expanded_url;
+        
+        if (is_null($tweet->entities->media) && strpos($maybeVideo,'youtu.be') !== false) {
           $media_thumb = "http://img.youtube.com/vi/". str_replace("http://youtu.be/","",$maybeVideo) ."/maxresdefault.jpg";
         }
         else{
