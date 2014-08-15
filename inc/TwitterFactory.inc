@@ -30,13 +30,6 @@ class TwitterFactory
   }
 
 
- private function date_compare($a, $b)
-  {
-    $t1 = strtotime($a['Date']);
-    $t2 = strtotime($b['Date']);
-    return $t1 < $t2;
-  }
-
 
   public function fetch_data(){
     // Twitter API 1.1 doesn't allow multi query in the way we wish for, it doesn't grantee that the result would be from both users/hashtags/keywords thus we need to query each key alone. which is annoying because of the datalimit.
@@ -60,4 +53,12 @@ class TwitterFactory
   }
 
 }
+
+  function date_compare($a, $b)
+  {
+    $t1 = strtotime($a['Date']);
+    $t2 = strtotime($b['Date']);
+    return $t1 < $t2;
+  }
+
 ?>

@@ -62,7 +62,6 @@ class TwitterHashtags
 
       }
     } 
-    print_r($output_array);
             return $output_array;
   }
 }
