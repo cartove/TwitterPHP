@@ -1,16 +1,14 @@
 <?php
 require_once('TwitterFactory.inc');
-$users = array('cartove');
+$users = array("cartove");
 $user_limit = 5;
-$keywords = array();
-$keywords_limit = 0;
-$hashtags = array();
-$hashtags_limit = 0;
+$keywords = array("gaza");
+$keywords_limit = 1;
+$hashtags = array("gaza");
+$hashtags_limit = 1;
 $settings_file_url = 'inc/settings/keys.yaml';
 $Data = new TwitterFactory($users,$user_limit,$keywords,$keywords_limit,$hashtags,$hashtags_limit,$settings_file_url);
 $Data = $Data->fetch_data();
-    print_r($Data);
-
 ?>
 
 <?php

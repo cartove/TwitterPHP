@@ -27,7 +27,6 @@ class TwitterFactory
     $this->hashtags_limit = $_hashtags_limit;
     $this->keys = spyc_load_file($settings_file_url);
     $this->twitter_api = new TwitterHashtags($this->keys);
-
   }
 
 
@@ -56,7 +55,7 @@ class TwitterFactory
       array_push($this->Data,$this->twitter_api->twitter_processor($this->keywords,'?q=',$this->keywords_limit));
     }
     $this->Data = array_merge((array)$this->Data[0],(array)$this->Data[1],(array)$this->Data[2]);
-    usort($Data, 'date_compare');
+    // usort($Data, 'date_compare');
     return $this->Data;
   }
  

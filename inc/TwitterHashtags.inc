@@ -13,11 +13,11 @@ class TwitterHashtags
   function __construct($keys)
   {
     $this->twitter = new TwitterAPIExchange($keys);
+    print_r($this->twitter);
   }
 
   public function twitter_processor($list,$qtype,$limit)
   {
-    static $tweetsCounter = 1;
     $output_array= array();
     $url = $this->tweets_url;  
     
@@ -53,8 +53,7 @@ class TwitterHashtags
         $text = preg_replace('/((https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $text);
         $text = preg_replace('/#(\\w+)/','<a href="http://twitter.com/hashtag/\1">#\1</a>',$text);
         $text = preg_replace('/@(\\w+)/','<a href="http://twitter.com/\1">@\1</a>',$text);
-        array_push($output_array, array("ID" => $tweetsCounter++,
-                                        "Text" => $text,
+        array_push($output_array, array("Text" => $text,
                                         "AuthorName"  => $tweet->user->name,
                                         "UserPicture" => $tweet->user->profile_image_url,
                                         "AuthorTwitterName" =>  $tweet->user->screen_name,
