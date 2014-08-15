@@ -1,7 +1,7 @@
 <?php
-require_once ('utils.inc');
-require_once('TwitterHashtags.inc');
-require_once('spyc.inc');
+require_once ('utils.php');
+require_once('TwitterHashtags.php');
+require_once('spyc.php');
 
 class TwitterFactory
 {

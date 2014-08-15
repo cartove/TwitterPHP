@@ -4,7 +4,7 @@
 *  @author Muhammad Negm <alam.hor[at]gmail.com>
  * @license  WTFPL
 */ 
-require_once("TwitterAPIExchange.inc");
+require_once("TwitterAPIExchange.php");
 
 class TwitterHashtags
 {
