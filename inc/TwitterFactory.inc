@@ -1,5 +1,5 @@
 <?php
-
+require_once ('utils.inc');
 require_once('TwitterHashtags.inc');
 require_once('spyc.inc');
 
@@ -56,12 +56,7 @@ class TwitterFactory
 
 }
 
- function date_compare($a, $b)
-  {
-    date_default_timezone_set('GMT');
-    $t1 = strtotime($a['Date']);
-    $t2 = strtotime($b['Date']);
-    return $t1 < $t2;
-  }
+
+
 
 ?>

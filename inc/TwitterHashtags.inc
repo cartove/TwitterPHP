@@ -71,5 +71,3 @@ class TwitterHashtags
             return $output_array;
   }
 }
-
-https://twitter.com/intent/retweet?tweet_id=500321089797783552

@@ -1,5 +1,7 @@
 <?php
 require_once('TwitterFactory.inc');
+require_once ('utils.inc');
+
 $users = array("cartove");
 $user_limit = 5;
 $keywords = array("gaza");
@@ -10,7 +12,6 @@ $settings_file_url = 'inc/settings/keys.yaml';
 $Data = new TwitterFactory($users,$user_limit,$keywords,$keywords_limit,$hashtags,$hashtags_limit,$settings_file_url);
 $Data = $Data->fetch_data();
 ?>
-
 <?php
 foreach ($Data as $element):
 ?>
@@ -29,7 +30,7 @@ foreach ($Data as $element):
         </a>
         <small class="time">
         <a href="<?= $element['URL']?>" class="tweet-timestamp">
-        <span class="_timestamp"><?= $element['Date']?></span>
+        <span class="_timestamp"><?= time_elapsed_string($element['Date'])?></span>
         </a>
         </small>
       </div>
