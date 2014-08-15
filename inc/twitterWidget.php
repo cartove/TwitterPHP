@@ -17,7 +17,7 @@
                   success: function(response){
                       document.getElementById('tw-list').innerHTML += response;
                   }
-              });}, 1000);
+              });}, 10000);
     </script>
     </ol>
   </div>
