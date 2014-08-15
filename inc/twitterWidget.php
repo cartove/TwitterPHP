@@ -8,14 +8,16 @@
     <ol class="stream-items" id="tw-list">
 
     <script type="text/javascript">
-            $.ajax({
-                type: "POST",
-                url: "inc/tweets.php",
-                dataType:'text',
-                success: function(response){
-                    document.getElementById('tw-list').innerHTML += response;
-                }
-            });
+            setInterval(function()
+            { 
+              $.ajax({
+                  type: "POST",
+                  url: "inc/tweets.php",
+                  dataType:'text',
+                  success: function(response){
+                      document.getElementById('tw-list').innerHTML += response;
+                  }
+              });}, 5);
     </script>
     </ol>
   </div>
