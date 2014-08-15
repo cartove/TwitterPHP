@@ -15,7 +15,7 @@
                   url: "inc/tweets.php",
                   dataType:'text',
                   success: function(response){
-                      document.getElementById('tw-list').innerHTML += response;
+                      document.getElementById('tw-list').innerHTML = response + document.getElementById('tw-list').innerHTML;
                   }
               });}, 10000);
     </script>
