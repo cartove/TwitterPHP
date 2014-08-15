@@ -61,7 +61,8 @@ class TwitterHashtags
                                         "Date" => "$tweet->created_at"));
 
       }
-    }  
+    } 
+    print_r($output_array);
             return $output_array;
   }
 }

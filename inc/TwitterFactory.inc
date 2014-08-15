@@ -11,8 +11,8 @@ class TwitterFactory
     private $keywords_limit = 0;
     private $hashtags = array();
     private $hashtags_limit = 0;
-    private $keys;
-    private $Data;
+    private $keys= array();
+    private $Data = array();
     private $twitter_api;
 
   function __construct($_users,$_user_limit,$_keywords,$_keywords_limit,$_hashtags,$_hashtags_limit,$settings_file_url)
@@ -55,9 +55,9 @@ class TwitterFactory
       array_push($this->Data,$this->twitter_api->twitter_processor($this->keywords,'?q=',$this->keywords_limit));
     }
     $this->Data = array_merge((array)$this->Data[0],(array)$this->Data[1],(array)$this->Data[2]);
-    // usort($Data, 'date_compare');
+    usort($Data, 'date_compare');
     return $this->Data;
   }
- 
+
 }
 ?>
