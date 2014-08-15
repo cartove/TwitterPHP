@@ -5,8 +5,8 @@ require_once('spyc.php');
 
 class TwitterFactory
 {
-    private $users = array('cartove');
-    private $user_limit = 5;
+    private $users = array();
+    private $user_limit = 0;
     private $keywords = array();
     private $keywords_limit = 0;
     private $hashtags = array();

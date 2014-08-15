@@ -2,7 +2,7 @@
 /**
 *  Twitter Hashtag search class 
 *  @author Muhammad Negm <alam.hor[at]gmail.com>
- * @license  WTFPL
+*  @license  WTFPL
 */ 
 require_once("TwitterAPIExchange.php");
 
@@ -21,7 +21,11 @@ class TwitterHashtags
     $url = $this->tweets_url;  
     
     foreach($list as $key){
-      $getfield = $qtype . $key. "&count=" . $limit . "&result_type=recent";
+      $sinceid_Query = "";
+      if(file_exists('sinceid.data'))
+        $sinceid_Query = file_get_contents('sinceid.data');
+        
+      $getfield = $qtype . $key. "&count=" . $limit . "&result_type=recent&since_id=" . $sinceid_Query;
 
       $api_response= $this->twitter->setGetfield($getfield)
                  ->buildOauth($url, "GET")
@@ -33,6 +37,7 @@ class TwitterHashtags
       else{
         $statuses = $response;
       }
+      file_put_contents('sinceid.data',$statuses[0]->id_str);
       foreach($statuses as $tweet)
       {
 
