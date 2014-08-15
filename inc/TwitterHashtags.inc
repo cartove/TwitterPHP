@@ -13,7 +13,6 @@ class TwitterHashtags
   function __construct($keys)
   {
     $this->twitter = new TwitterAPIExchange($keys);
-    print_r($this->twitter);
   }
 
   public function twitter_processor($list,$qtype,$limit)
