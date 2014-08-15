@@ -241,3 +241,58 @@ a,a:hover,a:focus,a:active,a,.account-group:hover .fullname,.account-group:focus
     position: relative;
     left: -50%;
 }
+.tweet .intents {
+height:16px;
+white-space:nowrap;
+}
+ul.tweets li:hover > .intents {
+}
+.tweet .intents a {
+
+background:url('twitter-sprite-vertical.png') no-repeat;
+/* width:16px;
+height:16px;*/
+display:inline-block;
+vertical-align:sub;
+margin-left:4px;
+padding-left:18px;
+font-size: 11px;
+}
+.tweet .intents a,
+.tweet .intents a:hover,
+.tweet .intents a:active,
+.tweet .intents a:visited {
+color: #999;
+text-decoration: none;
+}
+.tweet .intents a:hover {
+color: #666;
+}
+.tweet .icon.reply {
+margin-right: 2px;
+background-position:0 0;
+margin-left:0;
+}
+.tweet .icon.reply:hover {
+background-position:0 -16px;
+}
+.tweet .icon.retweet {
+margin-right: 2px;
+background-position: 0 -80px;
+}
+.tweet .icon.retweet:hover {
+background-position: 0 -112px;
+}
+.tweet .icon.favorite {
+background-position: 0 -32px;
+}
+.tweet .icon.favorite:hover {
+background-position:0 -64px;
+}
+.tweet .icon.permalink {
+margin-left:6px;
+background-position: 0 -128px;
+}
+.tweet .icon.permalink:hover {
+background-position: 0 -144px;
+}

@@ -60,7 +60,11 @@ class TwitterHashtags
                                         "AuthorTwitterName" =>  $tweet->user->screen_name,
                                         "URL" => "http://twitter.com/{$tweet->user->screen_name}/status/{$tweet->id_str}",
                                         "Media" => $media_thumb,
-                                        "Date" => "$tweet->created_at"));
+                                        "Date" => "$tweet->created_at",
+                                        "Retweet" => "https://twitter.com/intent/retweet?tweet_id={$tweet->id_str}",
+                                        "Favorite" => "https://twitter.com/intent/favorite?tweet_id={$tweet->id_str}",
+                                        "Replay" => "https://twitter.com/intent/tweet?in_reply_to={$tweet->id_str}")
+        );
 
       }
     } 
@@ -68,3 +72,4 @@ class TwitterHashtags
   }
 }
 
+https://twitter.com/intent/retweet?tweet_id=500321089797783552

@@ -43,7 +43,12 @@ foreach ($Data as $element):
         </a>
       </div>
     <?php endif; ?>
-    
+          <div class="intents">
+            <a href="<?= $element['Replay']?>" target="_blank" class="icon reply" title="Reply" onclick="window.open(this.href, 'mywin','left=20,top=20,width=600,height=300,toolbar=1,resizable=0'); return false;">Reply</a>
+            <a href="<?= $element['Retweet']?>"  target="_blank" class="icon retweet" title="Retweet" onclick="window.open(this.href, 'mywin','left=20,top=20,width=600,height=300,toolbar=1,resizable=0'); return false;">Retweet</a>
+            <a href="<?= $element['Favorite']?>" target="_blank" class="icon favorite" rel="favorite" title="Favorite" onclick="window.open(this.href, 'mywin','left=20,top=20,width=600,height=300,toolbar=1,resizable=0'); return false;">Favorite</a> 
+            <a href="<?= $element['URL']?>" target="_blank" class="icon permalink" rel="permalink" title="View on Twitter" onclick="window.open(this.href, 'mywin','left=20,top=20,width=600,height=300,toolbar=1,resizable=0'); return false;"></a> 
+        </div>
     </div>
   </div>
 </li>
