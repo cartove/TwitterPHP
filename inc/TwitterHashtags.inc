@@ -8,25 +8,21 @@ require_once("TwitterAPIExchange.inc");
 
 class TwitterHashtags
 {
-  private $tweets_url = "https://api.twitter.com/1.1/search/tweets.json";
-  private $users_url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+  private $tweets_url = 'https://api.twitter.com/1.1/search/tweets.json';
   private $twitter;
   function __construct($keys)
   {
     $this->twitter = new TwitterAPIExchange($keys);
   }
 
-  public function twitter_processor($list,$qtype,$limit,$type)
+  public function twitter_processor($list,$qtype,$limit)
   {
     static $tweetsCounter = 1;
     $output_array= array();
-    if ($type == "User") {
-      $url = $this->users_url;  
-    }else{
-      $url = $this->tweets_url;  
-    }
+    $url = $this->tweets_url;  
+    
     foreach($list as $key){
-      $getfield = $qtype . $key . "&count=" . $limit . "&result_type=recent";
+      $getfield = $qtype . $key. "&count=" . $limit . "&result_type=recent";
 
       $api_response= $this->twitter->setGetfield($getfield)
                  ->buildOauth($url, "GET")
@@ -72,11 +68,3 @@ class TwitterHashtags
   }
 }
 
-
-/* tools*/
-function date_compare($a, $b)
-{
-    $t1 = strtotime($a['Date']);
-    $t2 = strtotime($b['Date']);
-    return $t1 < $t2;
-}    

@@ -1,43 +1,18 @@
 <?php
-require_once('spyc.inc');
-require_once('TwitterHashtags.inc');
-
-/** Perform a GET request  **/
-/** Note: Set the GET field BEFORE calling buildOauth(); **/
-$users = array("cartove");
-$user_limit = 100;
+require_once('TwitterFactory.inc');
+$users = array('cartove');
+$user_limit = 5;
 $keywords = array();
 $keywords_limit = 0;
 $hashtags = array();
 $hashtags_limit = 0;
+$settings_file_url = 'inc/settings/keys.yaml';
+$Data = new TwitterFactory($users,$user_limit,$keywords,$keywords_limit,$hashtags,$hashtags_limit,$settings_file_url);
+$Data = $Data->fetch_data();
+    print_r($Data);
 
-
-
-$keys = Spyc::YAMLLoad('inc/settings/keys.yaml');      // Reading the keys settings please add your own keys
-
-
-// Twitter API 1.1 doesn't allow multi query in the way we wish for, it doesn't grantee that the result would be from both users/hashtags/keywords thus we need to query each key alone. which is annoying because of the datalimit.
-
-$Data = array();
-$twitter_api = new TwitterHashtags($keys);
-
-
-foreach ($hashtags as $key => $value) {
-  $hashtags[$key] = '#'. $value;
-}
-
-if(!empty($users)){
-  array_push($Data,$twitter_api->twitter_processor($users,'?screen_name=',$user_limit,'User'));
-}
-if(!empty($hashtags)){
-  array_push($Data,$twitter_api->twitter_processor($hashtags,'?q=',$hashtags_limit,'Hashtag'));
-}
-if(!empty($keywords)){
-  array_push($Data,$twitter_api->twitter_processor($keywords,'?q=',$keywords_limit,'Keyword'));
-}
-$Data = array_merge((array)$Data[0],(array)$Data[1],(array)$Data[2]);
-usort($Data, 'date_compare');
 ?>
+
 <?php
 foreach ($Data as $element):
 ?>
