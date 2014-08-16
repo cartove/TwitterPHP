@@ -7,6 +7,7 @@
   <div class="stream">
     <ol class="stream-items" id="tw-list">
     <?php // include_once ('tweets_cached.php'); // Databse cache?>
+    <?php include_once ('tweets.php'); ?>
     <script type="text/javascript">
       function gettweets () {
                       $.ajax({
@@ -17,7 +18,6 @@
                       document.getElementById('tw-list').innerHTML = response + document.getElementById('tw-list').innerHTML;
                   }
       })};
-                      gettweets ();
             setInterval(gettweets(), 10000);
     </script>
     </ol>
