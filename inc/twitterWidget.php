@@ -26,7 +26,7 @@
                   success: function(response){
                       document.getElementById('tw-list').innerHTML = response ;
                   }
-              });}, 10000);
+              });}, 15000);
     </script>
     </ol>
   </div>
