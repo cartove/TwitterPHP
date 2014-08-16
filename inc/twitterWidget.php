@@ -7,7 +7,6 @@
   <div class="stream">
     <ol class="stream-items" id="tw-list">
     <?php // include_once ('tweets_cached.php'); // Databse cache?>
-    <?php include_once ('tweets.php'); ?>
     <script type="text/javascript">
       function gettweets () {
                       $.ajax({
