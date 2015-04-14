@@ -1,4 +1,4 @@
-	oauth_access_token : '8442502-VUbvGjtf5fwKbLedbDRZi2Ws1eYvy9ieKghf2GI68F'
-	oauth_access_token_secret : 'I6RvuMlYhIse3iKp4XJqoAMRQYZdpdjR8qqjvEhB3I3o1'
-	consumer_key : 'lv2d2MeNVYWS6AB5Qymtg' # also known as api key
-	consumer_secret : 'sJmB6Voww4pX4vx6sTOpTVDgAzO8u4riTOAyB1TJ1k' # also known as api secret key
+	oauth_access_token : ''
+	oauth_access_token_secret : ''
+	consumer_key : '' # also known as api key
+	consumer_secret : '' # also known as api secret key
